@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
+  <defs>
+    <linearGradient id="favMonolith" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#CBD5E1"/>
+    </linearGradient>
+    <linearGradient id="favBlade" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#56E0C5"/>
+      <stop offset="100%" stop-color="#2DD4BF"/>
+    </linearGradient>
+    <linearGradient id="favMark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFB86B"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Outer Architectural Obsidian Plaque -->
+  <rect x="3" y="3" width="58" height="58" rx="14" fill="#080D1A" stroke="rgba(255,255,255,0.15)" stroke-width="1.2"/>
+  
+  <!-- Inset Precision Frame -->
+  <rect x="6.5" y="6.5" width="51" height="51" rx="11" stroke="rgba(86,224,197,0.2)" stroke-width="0.8" fill="none"/>
+
+  <!-- Corner Drafting Ticks -->
+  <g stroke="rgba(86,224,197,0.4)" stroke-width="1" stroke-linecap="round">
+    <path d="M 9 14 V 9 H 14"/>
+    <path d="M 50 9 H 55 V 14"/>
+    <path d="M 9 50 V 55 H 14"/>
+    <path d="M 50 55 H 55 V 50"/>
+  </g>
+
+  <!-- The Monogram: "I-K" Architectural Chiseled Glyph -->
+  <g>
+    <!-- Left Monolith Pillar ("I"): Pure Titanium Ingot -->
+    <path d="M 18 21 L 24 15 H 27 V 43 L 21 49 H 18 Z" fill="url(#favMonolith)"/>
+
+    <!-- Upper Cantilever Ink Blade ("K" Upper Wing): Electric Teal -->
+    <path d="M 30 26 L 41 15 H 47 L 34 28 Z" fill="url(#favBlade)"/>
+
+    <!-- Lower Cantilever Ink Blade ("K" Lower Wing / Nib Taper): Electric Teal -->
+    <path d="M 34 36 L 47 49 H 41 L 30 38 Z" fill="url(#favBlade)"/>
+
+    <!-- The Core Focal Mark: Radiant Warm Amber Diamond -->
+    <polygon points="32,27.5 36.5,32 32,36.5 27.5,32" fill="url(#favMark)"/>
+  </g>
+</svg>
+

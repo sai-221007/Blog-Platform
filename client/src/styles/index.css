@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..800;1,6..72,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #0B1020;
+    --bg-secondary: #111827;
+    --accent-teal: #56E0C5;
+    --accent-amber: #FFB86B;
+    --text-primary: #F8FAFC;
+    --text-secondary: #94A3B8;
+    --border-subtle: rgba(255, 255, 255, 0.08);
+  }
+
+  .light {
+    --bg-primary: #F7F5EF;
+    --bg-secondary: #FFFFFF;
+    --accent-teal: #0D9488;
+    --accent-amber: #D97706;
+    --text-primary: #0F172A;
+    --text-secondary: #64748B;
+    --border-subtle: rgba(0, 0, 0, 0.08);
+  }
+
+  body {
+    @apply font-sans antialiased bg-inkora-navy text-inkora-textLight selection:bg-inkora-teal selection:text-inkora-dark transition-colors duration-300;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .light body {
+    @apply bg-inkora-ivory text-inkora-textDark;
+  }
+
+  /* Custom modern scrollbar */
+  ::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0B1020;
+  }
+
+  .light ::-webkit-scrollbar-track {
+    background: #F7F5EF;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(86, 224, 197, 0.25);
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(86, 224, 197, 0.5);
+  }
+
+  .light ::-webkit-scrollbar-thumb {
+    background: rgba(13, 148, 136, 0.3);
+  }
+}
+
+/* Glassmorphism & Editorial card styles */
+.editorial-glass {
+  background: rgba(17, 24, 39, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.light .editorial-glass {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.editorial-glass-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.editorial-glass-hover:hover {
+  border-color: rgba(86, 224, 197, 0.3);
+  box-shadow: 0 12px 30px -10px rgba(86, 224, 197, 0.12);
+  transform: translateY(-2px);
+}
+
+.light .editorial-glass-hover:hover {
+  border-color: rgba(13, 148, 136, 0.35);
+  box-shadow: 0 12px 30px -10px rgba(13, 148, 136, 0.12);
+}
+
+/* Editorial typography for articles */
+.article-prose {
+  font-family: 'Newsreader', 'Playfair Display', Georgia, serif;
+  font-size: 1.25rem;
+  line-height: 1.85;
+  color: #E2E8F0;
+}
+
+.light .article-prose {
+  color: #1E293B;
+}
+
+.article-prose h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.1rem;
+  font-weight: 700;
+  margin-top: 2.8rem;
+  margin-bottom: 1.2rem;
+  color: #F8FAFC;
+  letter-spacing: -0.02em;
+}
+
+.light .article-prose h2 {
+  color: #0F172A;
+}
+
+.article-prose h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.9rem;
+  color: #56E0C5;
+}
+
+.light .article-prose h3 {
+  color: #0D9488;
+}
+
+.article-prose p {
+  margin-bottom: 1.6rem;
+}
+
+.article-prose blockquote {
+  border-left: 3px solid #56E0C5;
+  padding-left: 1.5rem;
+  margin: 2.2rem 0;
+  font-style: italic;
+  font-size: 1.35rem;
+  line-height: 1.7;
+  color: #F1F5F9;
+  background: rgba(86, 224, 197, 0.04);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 0 8px 8px 0;
+}
+
+.light .article-prose blockquote {
+  border-left-color: #0D9488;
+  color: #0F172A;
+  background: rgba(13, 148, 136, 0.06);
+}
+
+.article-prose ul, .article-prose ol {
+  margin: 1.4rem 0 1.6rem 1.8rem;
+}
+
+.article-prose li {
+  margin-bottom: 0.6rem;
+}
+
+.article-prose code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.92em;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.2em 0.45em;
+  border-radius: 4px;
+  color: #56E0C5;
+}
+
+.light .article-prose code {
+  background: rgba(0, 0, 0, 0.06);
+  color: #0D9488;
+}
+
+.article-prose pre {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  background: #080C18;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 1.25rem;
+  margin: 2rem 0;
+  overflow-x: auto;
+  color: #F8FAFC;
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
